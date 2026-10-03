@@ -1,4 +1,5 @@
 from sentence_transformers import SentenceTranformers
+import 
 
 with open("fest_info.txt", "r", encoding="utf-8") as f:
     text = f.read()
@@ -20,7 +21,8 @@ chunks= chunk_text(text)
 model = SentenceTranformers('all-miniLM-L6-V2')
 embiddings = model.encode(chunks)
 
-print(f"total {len(chunks)}created -> shape of embeddings: {embeddings.shape}")
+
+print(f"total {len(chunks)}created -> shape of embeddings: {embiddings.shape}")
 
 for i in range(len(chunks)):
     print(f"chunk_{i+1}: {chunks[i]}")
